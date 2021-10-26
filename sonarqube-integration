@@ -13,6 +13,13 @@ stage ('Initialize') {
         ''' 
       }
   }
+  
+  stage ('Build') { 
+    steps {
+      sh 'mvn clean package'
+       }
+    }
+    
     stage ('scan'){
     steps{
       WithSonarQubeEnv('sq1'){

@@ -4,15 +4,15 @@ pipeline {
     PATH = "$PATH:/opt/apache-maven-3.8.2/bin"
   }
   
-stages{
-stage ('Initialize') {
-    steps {
-    sh '''
-      echo "PATH = ${PATH}"
-                 echo "M2_HOME = ${M2_HOME}"
-        ''' 
-      }
-  }
+//stages{
+//stage ('Initialize') {
+  //  steps {
+    //sh '''
+      //echo "PATH = ${PATH}"
+        //         echo "M2_HOME = ${M2_HOME}"
+       // ''' 
+      //}
+  //}
   
  stage ('Build') { 
     steps {

@@ -28,9 +28,9 @@ stages{
    // }
     
      stage('scan') {
-     tools {
-       sonarQube 'SonarQube Scanner 4.6.2.2472'
-      }
+    // tools {
+      // sonarQube 'SonarQube Scanner 4.6.2.2472'
+     // }
       steps {
         withSonarQubeEnv('sq2') {
           sh 'sonar-scanner'

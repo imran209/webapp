@@ -14,15 +14,15 @@ stage ('Initialize') {
       }
   }
   
- // stage ('Build') { 
-   // steps {
-     // sh 'mvn clean package'
-    //   }
-   // }
+ stage ('Build') { 
+    steps {
+      sh 'mvn clean package'
+       }
+    }
     
     stage ('scan'){
     steps{
-      WithSonarQubeEnv('sq1'){
+      WithSonarQubeEnv('sq2'){
          sh "mvn sonar:sonar"
       }  
     }

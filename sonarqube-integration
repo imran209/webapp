@@ -33,7 +33,7 @@ stages{
      // }
       steps {
         withSonarQubeEnv('sq2') {
-          sh 'sonar-scanner'
+          sh "./gradlew sonarqube"
         }
       }
     

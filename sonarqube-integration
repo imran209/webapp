@@ -20,12 +20,23 @@ stages{
        }
     }
     
-    stage ('scan'){
-    steps{
-      WithSonarQubeEnv('sq2'){
-         sh "mvn sonar:sonar"
-      }  
-    }
+ //   stage ('scan'){
+   // steps{
+     // WithSonarQubeEnv('sq2'){
+       //  sh "mvn sonar:sonar"
+     // }  
+   // }
+    
+     stage('scan') {
+      tools {
+        sonarQube 'SonarQube Scanner 2.8'
+      }
+      steps {
+        withSonarQubeEnv('sq2') {
+          sh 'sonar-scanner'
+        }
+      }
+    
   }
 }
 }
